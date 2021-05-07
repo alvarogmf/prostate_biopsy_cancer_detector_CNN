@@ -20,9 +20,9 @@ if uploaded_file is not None:
     image = tiff.imread(uploaded_file)
     new_img = cv2.resize(image, (int(image.shape[1]/image.shape[0]*512),512))
     st.image(new_img)
-    model = tf.keras.models.load_model(os.path.join('model/first_model_changing_isup_grade.h5'))
-    new_image = cv2.resize(image,(258, 258))
-    to_predict = np.array(new_image).reshape(-1, 258, 258, 3)
+    model = tf.keras.models.load_model(os.path.join('model/model.h5'))
+    new_image = cv2.resize(image,(256, 256))
+    to_predict = np.array(new_image).reshape(-1, 256, 256, 3)
     prediction = model.predict(to_predict)
 
     if prediction == 0:

@@ -30,23 +30,27 @@ The images used to develop this project and train the model come from the [Prost
 </p>
 
 ### :chart_with_upwards_trend: **Model**
-**WIP**
+The project has been developed using a custom Sequential model with the following layers:
 |Layer (type) 	 |Output Shape					 |Param #					   |
 |----------------|-------------------------------|-----------------------------|
-|conv2d_5 (Conv2D) |(None, 256, 256, 16)            |448                   |
-|max_pooling2d_5 (MaxPooling2)|(None, 128, 128, 16)         |0            |
-|conv2d_6 (Conv2D)|(None, 126, 126, 32)|4640      |
-|max_pooling2d_6 (MaxPooling2)|(None, 63, 63, 32)|0|
-|dropout_3 (Dropout)|(None, 63, 63, 32)|0|
-|conv2d_7 (Conv2D)| (None, 61, 61, 64) |18496     |
-|max_pooling2d_7 (MaxPooling2)| (None, 30, 30, 64) |0|
-|dropout_4 (Dropout)| (None, 30, 30, 64)  |0|
-|flatten_2 (Flatten)| (None, 57600)    |0|
-|dense_6 (Dense)|(None, 32)   |1843232   |
-|dense_7 (Dense)|  (None, 16)   |528       |
-|dense_8 (Dense)|  (None, 1)   |17|
-Total params: 1,867,361
-Trainable params: 1,867,361
+|conv2d_3 (Conv2D) |(None, 254, 254, 16)            |448                   |
+|max_pooling2d_3 (MaxPooling2)|(None, 127, 127, 16)         |0            |
+|conv2d_4 (Conv2D)|(None, 125, 125, 32)|4640      |
+|max_pooling2d_4 (MaxPooling2)|(None, 63, 63, 32)|0|
+|dropout_5 (Dropout)|(None, 63, 63, 32)|0|
+|conv2d_5 (Conv2D)| (None, 60, 60, 64) |18496     |
+|max_pooling2d_5 (MaxPooling2)| (None, 30, 30, 64) |0|
+|dropout_6 (Dropout)| (None, 30, 30, 64)  |0|
+|flatten_1 (Flatten)| (None, 57600)    |0|
+|dense_4 (Dense)|(None, 32)   |3686464|
+|dropout_7 (Dropout)|(None, 64)   |0|
+|dense_5 (Dense)|  (None, 32)   |2080|
+|dropout_8 (Dropout)|(None, 32)   |0|
+|dense_6 (Dense)|  (None, 16)   |528|
+|dropout_9 (Dropout)|(None, 16) |0|
+|dense_7 (Dense)|  (None, 1)   |17|
+Total params: 3,712,673
+Trainable params: 3,712,673
 Non-trainable params: 0
 
 ### :video_game: **How to Use**
@@ -73,3 +77,6 @@ Although in future iterations I pretend to create a web-page that will store the
  1. Improve model Accuracy
  2. Create webpage to be accesible by anyone
  3. Add "Download as PDF" button on Streamlit
+
+### 💌  **Contact info**
+If you have any question or want to contribute on this project, please don't hesitate to contact me! 

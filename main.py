@@ -7,7 +7,7 @@ import packages.Reporting.reporting as rp
 train_csv_path = "train.csv"
 load_path = "train_images/"
 save_path = "png_images/"
-CATEGORIES = ['Benign', 'Malign']
+CATEGORIES = ['NO CANCER', 'CANCER']
 model_name = 'model'
 prediction_image_path = 'predict/png_converted/predict.png'
 
@@ -21,7 +21,7 @@ def terminal_parser():
     parser.add_argument("-t", "--train", action="store_true",
 						help="Reads the PNG images in the images_png folder, trains the model and saves it as a h5 file.")
     parser.add_argument("-p", "--predict", action="store_true",
-						help="Reads a TIFF image placed in the predict folder and brings the prediction to a pdf file"))
+						help="Reads a TIFF image placed in the predict folder and brings the prediction to a pdf file")
 
     return parser.parse_args()
 
@@ -45,11 +45,12 @@ def main():
 
     if args.predict:
         rp.image_predict_convert()
-        model = tf.keras.models.load_model(os.path.join('model/', f"{model_name}.h5"))
-        img, result, image_path = rp.prediction(model = model , image_path = prediction_image_path, categories, pixels=258)
+        model = ml.load_model_h5()
+        img, result, image_path = rp.prediction(model = model , image_path = prediction_image_path, categories = CATEGORIES, pixels=258)
         print(f'Prediction Complete! The result is: {result}')
         # MISSING REPORT TO PDF
-
+        print(f'Saving to PDF...')
+        rp.to_pdf(img, result)
 
 
 
