@@ -73,7 +73,7 @@ If the commands `python main.py -predict` or `python main.py -p` are used, it wi
 Although in future iterations I pretend to create a web-page that will store the app, for now it is locally stored. To access the Streamlit app, in the Terminal head to the folder and type `streamlit run app.py` this will open a local host page on your browser. Here you can upload a biopsy image (again, in TIFF format) and it will display an image of the biopsy and the prediction of whether if there is Cancer or not.
 
 <p align="center">
-![streamlit] (<img src="https://i.ibb.co/rZSFTv6/streamlit-app-2021-05-05-19-05-32.gif"/>)
+![streamlit](https://media.giphy.com/media/rrEhfDNPBEK4JAzs6l/giphy.gif)
 </p>
 
 ### :shit: **ToDo**
